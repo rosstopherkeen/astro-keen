@@ -27,11 +27,12 @@ export async function getStaticPaths() {
 const { tag, posts } = Astro.props
 ---
 
-<Layout>
+<Layout class="max-w-3xl">
   <PageHead
     slot="head"
     title={`Posts tagged with "${tag}"`}
     description={`A collection of posts tagged with ${tag}.`}
+    noindex
   />
   <Breadcrumbs
     items={[
