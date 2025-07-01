@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:is([data-theme='dark'] *));
 
 @theme inline {
   --font-sans:
@@ -67,7 +67,7 @@
   --ring: oklch(0.708 0 0);
 }
 
-.dark {
+[data-theme='dark'] {
   --background: oklch(0.11 0.0789 264.05);
   --foreground: oklch(0.8 0.1192 232.69);
   --primary: oklch(0.922 0 0);
@@ -95,7 +95,7 @@
   html {
     @apply bg-background text-foreground scheme-light;
 
-    &.dark {
+    &[data-theme='dark'] {
       @apply scheme-dark;
     }
 
